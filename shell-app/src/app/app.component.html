@@ -1,0 +1,45 @@
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+  <mat-toolbar color="primary" class="example-toolbar">
+    <mat-toolbar-row>
+      <button mat-icon-button (click)="toggle()"><mat-icon>menu</mat-icon></button>
+      <span>Shell Application</span>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <mat-sidenav [opened]="isExpended" class="example-sidenav" #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
+               [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+    <mat-nav-list>
+      <button mat-button (click)="toggle('a')">App A</button>
+    </mat-nav-list>
+    <mat-nav-list>
+      <button mat-button (click)="toggle('b')">App B</button>
+    </mat-nav-list>
+    <mat-nav-list>
+      <button mat-button (click)="toggle('a', 'a')">App A Comp A</button>
+    </mat-nav-list>
+    <mat-nav-list>
+      <button mat-button (click)="toggle('a', 'b')">App A comp B</button>
+    </mat-nav-list>
+  </mat-sidenav>
+</div>
+
+<div class="padding-app" id="outlet" #outlet></div>
+
+<div>
+  <h3>Message received from children</h3>
+  <div>
+    <span>Passed message: {{commService.passedMessage}}</span>
+  </div>
+  <div>
+    <span>Passed to: {{commService.passedTo}}</span>
+  </div>
+</div>
+
+<h3>Post message</h3>
+<input type="text" placeholder="Message" [(ngModel)]="messageToSend" />
+<br />
+<input type="text" placeholder="Send to" [(ngModel)]="passedToChild" />
+<br />
+<button type="button" (click)="sendMessage()">Submit</button>
+<br />
+<br />

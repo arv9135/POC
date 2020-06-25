@@ -1,0 +1,92 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "shell-app", "shell-app\", "{D0C84FE6-7AD6-408C-965E-5779440CC849}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_9208"
+		Debug.AspNetCompiler.PhysicalPath = "shell-app\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_9208\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_9208"
+		Release.AspNetCompiler.PhysicalPath = "shell-app\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_9208\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "9208"
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{D8B85DC8-1D6C-4686-9850-AAB1A5935A02}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "app-c", "Services\app-c\", "{63C614E0-F5EE-45F9-BABB-3633066B2610}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_9303"
+		Debug.AspNetCompiler.PhysicalPath = "Services\app-c\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_9303\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_9303"
+		Release.AspNetCompiler.PhysicalPath = "Services\app-c\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_9303\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "9303"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "service-d", "Services\service-d\", "{7D8AA171-229F-4AE8-9D35-E0EABF6EA881}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_9356"
+		Debug.AspNetCompiler.PhysicalPath = "Services\service-d\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_9356\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_9356"
+		Release.AspNetCompiler.PhysicalPath = "Services\service-d\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_9356\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "9356"
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Resources", "Resources", "{6E38F1A1-AE05-4B7E-A2BB-BECABE597E80}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D0C84FE6-7AD6-408C-965E-5779440CC849}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0C84FE6-7AD6-408C-965E-5779440CC849}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63C614E0-F5EE-45F9-BABB-3633066B2610}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63C614E0-F5EE-45F9-BABB-3633066B2610}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D8AA171-229F-4AE8-9D35-E0EABF6EA881}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D8AA171-229F-4AE8-9D35-E0EABF6EA881}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{63C614E0-F5EE-45F9-BABB-3633066B2610} = {D8B85DC8-1D6C-4686-9850-AAB1A5935A02}
+		{7D8AA171-229F-4AE8-9D35-E0EABF6EA881} = {D8B85DC8-1D6C-4686-9850-AAB1A5935A02}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1072E7A8-C886-48CE-8C0F-6439DBA550A0}
+	EndGlobalSection
+EndGlobal
