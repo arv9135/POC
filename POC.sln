@@ -21,6 +21,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "shell-app", "shell-app\", "
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "9208"
+		SlnRelativePath = "shell-app\"
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{D8B85DC8-1D6C-4686-9850-AAB1A5935A02}"
@@ -43,6 +44,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "app-c", "Services\app-c\", 
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "9303"
+		SlnRelativePath = "Services\app-c\"
 	EndProjectSection
 EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "service-d", "Services\service-d\", "{7D8AA171-229F-4AE8-9D35-E0EABF6EA881}"
@@ -63,6 +65,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "service-d", "Services\servi
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "9356"
+		SlnRelativePath = "Services\service-d\"
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Resources", "Resources", "{6E38F1A1-AE05-4B7E-A2BB-BECABE597E80}"
