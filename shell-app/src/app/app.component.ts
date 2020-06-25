@@ -59,7 +59,7 @@ export class AppComponent implements OnInit {
     },
     {
       path: 'b',
-      app: 'https://www.globaltimes.cn/'
+      app: 'http://localhost:4400/'
     }
   ];
 

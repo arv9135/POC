@@ -1,6 +1,7 @@
 import { Injectable, Optional } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { IAppConfig } from '../Models/AppConfig';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ export class ShellCommService {
   passedMessage: any;
   passedTo: any;
   activatedRoute: null;
-  config: any;
+  config: IAppConfig[];
   configure(config: any) { this.config = config };
   init() {
     window.addEventListener('hashchange', this.routeByUrl.bind(this), false);
@@ -36,6 +37,7 @@ export class ShellCommService {
       //to do
       this.passedMessage = event.data.content;
       this.passedTo = event.data.to;
+      this.sendMessage(event.data.content, event.data.to);
     }
   }
   resizeIframe(appPath, height) {
@@ -138,12 +140,21 @@ export class ShellCommService {
     })
   }
 
-  sendMessage(message:any, from:any) {
-    var activatedIframe = this.getIframe({
-      path: 'a',
-      app: 'http://localhost:4200/'
-    });
-    activatedIframe.contentWindow.postMessage({ message: 'passedMessage', from: from, content: message }, '*');
+  sendMessage(message: any, from: any) {
+    var app = this.getConfig(from);
+    if (!!app) {
+      var activatedIframe = this.getIframe(app);
+      activatedIframe.contentWindow.postMessage({ message: 'passedMessage', from: from, content: message }, '*');
+
+    }
+    
+  }
+
+  getConfig(appId: string) {
+    var app = this.config.filter(x => x.path === appId);
+    if (app.length > 0) {
+      return app[0];
+    }
 
   }
 }

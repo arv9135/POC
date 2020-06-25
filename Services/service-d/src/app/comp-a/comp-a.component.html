@@ -1,0 +1,18 @@
+<h1>Component A</h1>
+<input type="text" placeholder="Message" [(ngModel)]="messagePassed" />
+<br />
+<input type="text" placeholder="Send to" [(ngModel)]="passedTo" />
+<br />
+<button type="button" (click)="sendMessage()">Submit</button>
+<br />
+<br />
+
+<div>
+  <h1>Message Received:</h1>
+  <div>
+    <span>Passed message: {{commService.receivedMessage}}</span>
+  </div>
+  <div>
+    <span>From: {{commService.from}}</span>
+  </div>
+</div>
