@@ -1,8 +1,18 @@
 # POC
 
+----------Open new cmd in POC------------------
+> cd ChildApps/ChildApp1
+> npm install
+>ng serve
 
-1. npm install in ChildApp1, ChildApp2 , shell-app
-2. ng serve      in ChildApp1
-3. ng serve --port 4400 in Child App2
-4. ng serve --port 4300 in shell app
+-----------Open new cmd in POC--------------
+> cd ChildApps/ChildApp2
+> npm install
+>ng serve --port 4400
+
+-----------Open new cmd in POC--------------
+cd shell-app
+> npm install
+>ng serve --port 4300
+
 Open browser with localhost:4300
