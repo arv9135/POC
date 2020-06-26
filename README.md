@@ -1,7 +1,7 @@
 # POC
 
 
-1. Run below commands in each folder location(ChildApp1, ChildApp2 , shell-app)
+1. Run below commands in each folder(ChildApp1, ChildApp2 , shell-app)
    npm install
 
 2. ng serve                 in ChildApp1
