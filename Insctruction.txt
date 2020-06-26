@@ -1,0 +1,14 @@
+----------Open new cmd in POC------------------
+> cd services/app-c
+> npm install
+>ng serve
+
+-----------Open new cmd in POC--------------
+> cd services/service-d
+> npm install
+>ng serve --port 4400
+
+-----------Open new cmd in POC--------------
+cd shell-app
+> npm install
+>ng serve --port 4300

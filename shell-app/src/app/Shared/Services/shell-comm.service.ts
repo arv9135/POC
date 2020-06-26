@@ -43,7 +43,7 @@ export class ShellCommService {
   resizeIframe(appPath, height) {
     let iframe = document.getElementById(appPath);
     if (!iframe) return;
-    height = height + 20;
+    height = height + 30;
     iframe.style.height = height + 'px';
     //iframe.style.height = '100%';
     iframe.style.width = '100%';
