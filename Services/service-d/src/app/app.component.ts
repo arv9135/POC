@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewChecked } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { CommunicationService } from './Shared/communication.service';
@@ -7,11 +7,14 @@ import { CommunicationService } from './Shared/communication.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterViewChecked {
   title = 'app-c';
 
   constructor(private router: Router, private commService: CommunicationService) {
     this.initChildRouter();
+  }
+  ngAfterViewChecked(): void {
+    this.commService.init();
   }
   ngOnInit(): void {
     this.commService.config({ appId: 'b' });

@@ -43,9 +43,11 @@ export class ShellCommService {
   resizeIframe(appPath, height) {
     let iframe = document.getElementById(appPath);
     if (!iframe) return;
-    //iframe.style.height = height + 'px';
-    iframe.style.height = '100%';
+    height = height + 20;
+    iframe.style.height = height + 'px';
+    //iframe.style.height = '100%';
     iframe.style.width = '100%';
+    iframe.style.backgroundColor = '#C0C0C0'
   }
   go(path?: any, subRoute?: any) {
     var route = this.config.find(function (route) {

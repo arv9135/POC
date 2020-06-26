@@ -20,8 +20,8 @@ export class CommunicationService {
     html.clientHeight, html.scrollHeight, html.offsetHeight);
     */
 
-    //var height = html.offsetHeight;
-    var height = 300;
+    var height = html.offsetHeight;
+    //var height = 300;
     parent.postMessage({ message: 'set-height', appPath: that.childConfig.appId, height: height }, '*');
   }
 
