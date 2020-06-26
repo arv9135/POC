@@ -69,6 +69,9 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "service-d", "Services\servi
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Resources", "Resources", "{6E38F1A1-AE05-4B7E-A2BB-BECABE597E80}"
+	ProjectSection(SolutionItems) = preProject
+		Insctruction.txt = Insctruction.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
