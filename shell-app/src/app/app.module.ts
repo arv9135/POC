@@ -6,10 +6,13 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './Shared';
 import { ShellCommService } from './Shared/Services/shell-comm.service';
 import { HeaderComponent } from './Shared/header/header.component';
+import { NavService } from './Shared/Services/nav.service';
+import { TopNavComponent } from './Shared/top-nav/top-nav.component';
+import { MenuListItemComponent } from './Shared/menu-list-item/menu-list-item.component';
 
 @NgModule({
   declarations: [
-    AppComponent, HeaderComponent
+    AppComponent, HeaderComponent, TopNavComponent, MenuListItemComponent
   ],
   imports: [
     BrowserModule,
@@ -17,7 +20,7 @@ import { HeaderComponent } from './Shared/header/header.component';
     BrowserAnimationsModule,
     SharedModule.forRoot()
   ],
-  providers: [ShellCommService],
+  providers: [ShellCommService, NavService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

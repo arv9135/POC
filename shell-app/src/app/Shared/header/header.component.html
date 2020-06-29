@@ -1,39 +1,11 @@
-<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
-  <mat-toolbar color="primary" class="example-toolbar">
-    <mat-toolbar-row>
-      <button mat-icon-button (click)="toggle()"><mat-icon>menu</mat-icon></button>
-      <span>Shell Application</span>
-    </mat-toolbar-row>
-  </mat-toolbar>
-
-  <mat-sidenav [opened]="isExpended" class="example-sidenav" #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
-               [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+<app-top-nav class="fixed-topnav"></app-top-nav>
+<mat-sidenav-container>
+  <mat-sidenav class="padding-menu-list" #appDrawer mode="push" opened="false">
+    <button class="close" mat-button (click)="closeSideNav()">X</button>
     <mat-nav-list>
-      <button mat-button (click)="toggle('a')">App A</button>
-    </mat-nav-list>
-    <mat-nav-list>
-      <button mat-button (click)="toggle('b')">App B</button>
-    </mat-nav-list>
-    <mat-nav-list>
-      <button mat-button (click)="toggle('a', 'a')">App A Comp A</button>
-    </mat-nav-list>
-
-
-
-
-
-    <mat-nav-list>
-      <ul>
-        <ng-template #recursiveList let-list>
-          <li *ngFor="let item of list" (click)="listClick($event, item)">
-            {{item.displayName}}
-            <ul *ngIf="item.children?.length > 0 && item.showSubfolders" >
-              <ng-container *ngTemplateOutlet="recursiveList; context:{ $implicit: item.children }"></ng-container>
-            </ul>
-          </li>
-        </ng-template>
-        <ng-container *ngTemplateOutlet="recursiveList; context:{ $implicit: list }"></ng-container>
-      </ul>
+      <app-menu-list-item *ngFor="let item of navItems" [item]="item"></app-menu-list-item>
     </mat-nav-list>
   </mat-sidenav>
-</div>
+  <div class="padding-app" id="outlet" #outlet></div>
+  <div fxFlex></div>
+</mat-sidenav-container>

@@ -48,8 +48,6 @@ export class AppComponent implements OnInit {
   }
   ngOnInit(): void {
     this.commService.configure(this.config);
-    this.commService.init();
-    this.commService.preload();
   }
   title = 'shell-app';
   config = [
