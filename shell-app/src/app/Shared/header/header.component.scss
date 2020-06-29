@@ -1,74 +1,58 @@
-.example-container {
-  display: flex;
-  flex-direction: column;
-  top: 0;
-  left: 0;
-  right: 0;
-  position: fixed;
-  z-index: 2;
-  height: 60px;
+@import '../../_breakpoints.scss';
+@import '../../_theme.scss';
+
+.mat-sidenav {
+  width: 360px;
 }
 
+.mat-sidenav-container {
+  background-color: white !important;
+  height: 100vh;
 
-
-h1.example-app-name {
-  margin-left: 8px;
-}
-
-.example-sidenav {
-  /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
-     causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
-  flex: 1 1 150px;
-  height: 80vh;
-  width: 250px;
-  display: flex;
-  position: inherit;
-  top: 60px;
-  overflow: auto;
-  opacity: .9;
-}
-
-.example-is-mobile .example-sidenav {
-  /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
-     `<body>` to be our scrolling element for mobile layouts. */
-  /*flex: 0 1 auto;*/
-}
-
-.list-tool {
-  flex: 1 1 auto;
-  width: 100vw;
-
-  span {
-    margin-right: 10px;
+  .mat-sidenav-content {
+    display: flex;
+    flex-direction: column;
   }
+}
 
-  span:last-child {
-    right: 0;
+.sidenav-toolbar {
+  height: 64px;
+  background-color: mat-color($app-primary);
+  display: flex;
+  flex-direction: row;
+
+  @media (max-width: 600px) {
+    height: 56px;
+  }
+}
+
+.mat-nav-list {
+  padding-top: 0;
+}
+
+@include breakpoint-max(600px) {
+  .fixed-topnav {
     position: fixed;
-    padding-right: 15px;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100% !important;
   }
 
-  button {
-    font-size: large;
-  }
-
-  button:hover {
-    /*background-color: #C21800;*/
-    font-size: larger;
+  .mat-drawer-container,
+  .mat-drawer {
+    padding-top: 56px;
   }
 }
 
-.padding-app {
-  padding: 66px 15px 5px;
-  /*  height: calc(100vh - 0px);*/
+.menu-list-item.mat-list-item {
+  .mat-list-item-content {
+    flex: 1 1 100%;
+  }
 }
 
-iframe.outlet-frame {
-  width: 100% !important;
-  background: #FFF;
-  border: none;
-}
-
-.subfolder {
-    color:red;
+.version-info {
+  font-size: 8pt;
+  padding: 8px;
+  align-self: flex-end;
 }
