@@ -44,7 +44,9 @@ export class HeaderComponent {
 
   constructor(private navService: NavService) {
   }
-
+  closeSideNav() {
+    this.navService.closeNav();
+  }
   ngAfterViewInit() {
     this.navService.appDrawer = this.appDrawer;
   }

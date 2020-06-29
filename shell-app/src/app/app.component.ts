@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectorRef, ViewChild, HostListener, ElementRef } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef, ViewChild, HostListener, ElementRef, AfterViewChecked } from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { MatSidenav } from '@angular/material/sidenav';
 import { ShellCommService } from './Shared/Services/shell-comm.service';
@@ -8,7 +8,7 @@ import { ShellCommService } from './Shared/Services/shell-comm.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterViewChecked {
   
   mobileQuery: MediaQueryList;
   isExpended: boolean = false;
@@ -34,6 +34,10 @@ export class AppComponent implements OnInit {
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
   }
+    ngAfterViewChecked(): void {
+      this.commService.init();
+      this.commService.preload();
+    }
 
   toggle(path?: string, subRoute?: string) {
     if (!!path) {
@@ -48,8 +52,7 @@ export class AppComponent implements OnInit {
   }
   ngOnInit(): void {
     this.commService.configure(this.config);
-    this.commService.init();
-    this.commService.preload();
+ 
   }
   title = 'shell-app';
   config = [
