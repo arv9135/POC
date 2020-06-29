@@ -5,10 +5,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './Shared';
 import { ShellCommService } from './Shared/Services/shell-comm.service';
+import { HeaderComponent } from './Shared/header/header.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent, HeaderComponent
   ],
   imports: [
     BrowserModule,
