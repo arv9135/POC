@@ -15,25 +15,32 @@ export class HeaderComponent implements AfterViewInit {
   navItems: NavItem[] = [
     {
       displayName: 'Service A',
-      iconName: '',
+      iconName: 'check_circle',
       route: 'a',
       children: [
         {
           displayName: 'Comp A',
-          iconName: '',
+          iconName: 'check_circle',
           route: 'a',
-          children: []
+          children: [
+            {
+              displayName: 'Comp A A',
+              iconName: 'check_circle',
+              route: 'a',
+              children: []
+            }
+          ]
         },
       ]
     },
     {
       displayName: 'Service B',
-      iconName: '',
+      iconName: 'check_circle',
       route: 'b',
       children: [
         {
           displayName: 'Comp A',
-          iconName: '',
+          iconName: 'check_circle',
           route: 'b',
           children: [
           ]

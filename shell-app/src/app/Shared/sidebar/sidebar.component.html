@@ -1,86 +1,50 @@
-<mat-sidenav-container class="example-container" style="height: 100vh;">
-    <mat-sidenav mode="side" opened style="width: 7rem; background: #b9b2b2;">
-      <mat-nav-list>
-  
-        <div>
-        <div class="nav-item-class" (click)="selected = 'home'"
-          [ngClass]="{'nav-item-selected': selected == 'home'}">
-          <mat-icon style="font-size: xx-large;">home</mat-icon>
-            <div style="font-weight: 600;
-            margin-top: -8px;
-            margin-left: -2px;">Home</div>
-        </div>
-  
-        <div class="nav-item-class" (click)="selected = 'plant'"  
-        [ngClass]="{'nav-item-selected': selected == 'plant'}">
-          <mat-icon style="font-size: xx-large;">analytics</mat-icon>
-            <div style="font-weight: 600;
-            margin-top: -8px;
-            margin-left: -2px;">Plant</div>
-        </div>
-  
-        <div class="nav-item-class" (click)="selected='library'"
-          [ngClass]="{'nav-item-selected': selected == 'library'}">
-          <div class="material-icons" style="font-size: xx-large;">
-            settings
-          </div>
-            <div style="font-weight: 600;
-            margin-top: -8px;
-            margin-left: -2px;">Library</div>
-        </div>
-  
-        <div class="nav-item-class" (click)="selected='workPlace'" 
-         [ngClass]="{'nav-item-selected': selected == 'workPlace'}">
-          <div class="material-icons" style="font-size: xx-large;">
-            run_circle
-          </div>
-            <div style="font-weight: 600;
-            margin-top: -8px;
-            margin-left: -2px;">Work place</div>
-        </div>
-  
-        <div class="nav-item-class" (click)="selected ='deploy'" 
-        [ngClass]="{'nav-item-selected': selected == 'deploy'}">
-          <div class="material-icons" style="font-size: xx-large;">
-            handyman
-          </div>
-            <div style="font-weight: 600;
-            margin-top: -8px;
-            margin-left: -2px;">Deploy</div>
-        </div>
-  
+<mat-sidenav mode="side" opened class="side-nav">
+  <mat-nav-list>
+
+    <div>
+      <div class="nav-item-class" (click)="openSideNav(); selected = 'home'"
+           [ngClass]="{'nav-item-selected': selected == 'home'}">
+        <mat-icon>home</mat-icon>
+        <div class="name">Home</div>
       </div>
-  
-        <div style="position: fixed; bottom:0">
-        <div class="nav-item-class" (click)="selected ='resources'" 
-        [ngClass]="{'nav-item-selected': selected == 'resources'}">
-          <!-- <div class="material-icons" style="font-size: xx-large;">
-            handyman
-          </div> -->
-          <mat-icon style="font-size: xx-large;">handyman</mat-icon>
-            <div style="font-weight: 600;
-            margin-top: -8px;
-            margin-left: -2px;">Resources</div>
-        </div>
-  
-  
-        <div class="nav-item-class" (click)="selected ='logOver'" 
-        [ngClass]="{'nav-item-selected': selected == 'logOver'}">
-          <div class="material-icons" style="font-size: xx-large;">
-            handyman
-          </div>
-            <div style="font-weight: 600;
-            margin-top: -8px;
-            margin-left: -2px;">Log Over</div>
-        </div>
-  
+
+      <div class="nav-item-class" (click)="selected = 'plant'"
+           [ngClass]="{'nav-item-selected': selected == 'plant'}">
+        <mat-icon>analytics</mat-icon>
+        <div class="name">Plant</div>
       </div>
-       
-  
-      </mat-nav-list>
-    </mat-sidenav>
-    <mat-sidenav-content> 
-  
-      <app-header></app-header>
-    </mat-sidenav-content>
-  </mat-sidenav-container>
+
+      <div class="nav-item-class" (click)="selected='library'"
+           [ngClass]="{'nav-item-selected': selected == 'library'}">
+        <mat-icon>settings</mat-icon>
+        <div class="name">Library</div>
+      </div>
+
+      <div class="nav-item-class" (click)="selected='workPlace'"
+           [ngClass]="{'nav-item-selected': selected == 'workPlace'}">
+        <mat-icon>run_circle</mat-icon>
+        <div class="name">Work place</div>
+      </div>
+
+      <div class="nav-item-class" (click)="selected ='deploy'"
+           [ngClass]="{'nav-item-selected': selected == 'deploy'}">
+        <mat-icon>handyman</mat-icon>
+        <div class="name">Deploy</div>
+      </div>
+
+    </div>
+    <div class="nav-item-class" (click)="selected ='resources'"
+         [ngClass]="{'nav-item-selected': selected == 'resources'}">
+      <mat-icon>handyman</mat-icon>
+      <div class="name">Resources</div>
+    </div>
+
+
+    <div class="nav-item-class" (click)="selected ='logOver'"
+         [ngClass]="{'nav-item-selected': selected == 'logOver'}">
+      <mat-icon>handyman</mat-icon>
+      <div class="name">Log Over</div>
+    </div>
+  </mat-nav-list>
+</mat-sidenav>
+

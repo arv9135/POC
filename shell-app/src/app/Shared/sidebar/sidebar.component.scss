@@ -1,9 +1,5 @@
-.mat-icon {
-    color: black;
-}
-
 .nav-item-class {
-    padding-left: 2.5rem;
+    padding-left: 0.6rem;
      position: relative;
      padding-bottom: 1rem;
       padding-top: 1rem;
@@ -11,11 +7,21 @@
 
 .nav-item-class:hover {
     cursor: pointer;
-    background: #bfb9b9;
 }
 
+.side-nav {
+  width: 6rem !important;
+}
 .nav-item-selected {
     cursor: pointer;
     background: #d2cece;
     border-left: 3px solid blue;
+}
+
+.mat-icon {
+  font-size: xx-large;
+}
+
+.name {
+  font-weight: 600;
 }
