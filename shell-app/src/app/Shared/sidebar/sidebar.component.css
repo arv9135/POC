@@ -1,0 +1,21 @@
+.mat-icon {
+    color: black;
+}
+
+.nav-item-class {
+    padding-left: 2.5rem;
+     position: relative;
+     padding-bottom: 1rem;
+      padding-top: 1rem;
+}
+
+.nav-item-class:hover {
+    cursor: pointer;
+    background: #bfb9b9;
+}
+
+.nav-item-selected {
+    cursor: pointer;
+    background: #d2cece;
+    border-left: 3px solid blue;
+}
