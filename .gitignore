@@ -11,7 +11,8 @@
 *.sln.docstates
 
 # User-specific files (MonoDevelop/Xamarin Studio)
-slnx.sqlite
+*.slnx.sqlite
+.vs/slnx.sqlite
 *.userprefs
 
 # Build results
