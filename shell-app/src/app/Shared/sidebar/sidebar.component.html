@@ -2,46 +2,46 @@
   <mat-nav-list>
 
     <div>
-      <div class="nav-item-class" (click)="toggle(); selected = 'home'"
-           [ngClass]="{'nav-item-selected': selected == 'home'}">
+      <div class="nav-item-class" (click)="selected = 'Home'; toggle();"
+           [ngClass]="{'nav-item-selected': selected == 'Home'}">
         <mat-icon>home</mat-icon>
         <div class="name">Home</div>
       </div>
 
-      <div class="nav-item-class" (click)="selected = 'plant'"
-           [ngClass]="{'nav-item-selected': selected == 'plant'}">
+      <div class="nav-item-class" (click)="selected = 'Plant'; toggle();"
+           [ngClass]="{'nav-item-selected': selected == 'Plant'}">
         <mat-icon>analytics</mat-icon>
         <div class="name">Plant</div>
       </div>
 
-      <div class="nav-item-class" (click)="selected='library'"
-           [ngClass]="{'nav-item-selected': selected == 'library'}">
+      <div class="nav-item-class" (click)="selected='Library'; toggle();"
+           [ngClass]="{'nav-item-selected': selected == 'Library'}">
         <mat-icon>settings</mat-icon>
         <div class="name">Library</div>
       </div>
 
-      <div class="nav-item-class" (click)="selected='workPlace'"
-           [ngClass]="{'nav-item-selected': selected == 'workPlace'}">
+      <div class="nav-item-class" (click)="selected='Work Place' ; toggle();"
+           [ngClass]="{'nav-item-selected': selected == 'Work Place'}">
         <mat-icon>run_circle</mat-icon>
         <div class="name">Work place</div>
       </div>
 
-      <div class="nav-item-class" (click)="selected ='deploy'"
-           [ngClass]="{'nav-item-selected': selected == 'deploy'}">
+      <div class="nav-item-class" (click)="selected ='Deploy'; toggle();"
+           [ngClass]="{'nav-item-selected': selected == 'Deploy'}">
         <mat-icon>handyman</mat-icon>
         <div class="name">Deploy</div>
       </div>
 
     </div>
-    <div class="nav-item-class" (click)="selected ='resources'"
-         [ngClass]="{'nav-item-selected': selected == 'resources'}">
+    <div class="nav-item-class" (click)="selected ='Resources' ; toggle();"
+         [ngClass]="{'nav-item-selected': selected == 'Resources'}">
       <mat-icon>handyman</mat-icon>
       <div class="name">Resources</div>
     </div>
 
 
-    <div class="nav-item-class" (click)="selected ='logOver'"
-         [ngClass]="{'nav-item-selected': selected == 'logOver'}">
+    <div class="nav-item-class" (click)="selected ='Log Over'; toggle();"
+         [ngClass]="{'nav-item-selected': selected == 'Log Over'}">
       <mat-icon>handyman</mat-icon>
       <div class="name">Log Over</div>
     </div>

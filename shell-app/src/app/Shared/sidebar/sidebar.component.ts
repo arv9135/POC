@@ -22,7 +22,15 @@ export class SidebarComponent implements OnInit {
   }
 
   toggle() {
-    this.navService.toggle();
+    if (this.selected != this.navService.featureSelected) {
+      this.navService.featureSelected = this.selected;
+      this.navService.openNav();
+      
+    }
+    else {
+      this.navService.toggle();;
+    }
+    
   }
 
 }
