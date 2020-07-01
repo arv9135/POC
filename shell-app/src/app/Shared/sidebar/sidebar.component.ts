@@ -21,4 +21,8 @@ export class SidebarComponent implements OnInit {
     this.navService.openNav();
   }
 
+  toggle() {
+    this.navService.toggle();
+  }
+
 }

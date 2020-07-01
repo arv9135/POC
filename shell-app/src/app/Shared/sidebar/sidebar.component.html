@@ -2,7 +2,7 @@
   <mat-nav-list>
 
     <div>
-      <div class="nav-item-class" (click)="openSideNav(); selected = 'home'"
+      <div class="nav-item-class" (click)="toggle(); selected = 'home'"
            [ngClass]="{'nav-item-selected': selected == 'home'}">
         <mat-icon>home</mat-icon>
         <div class="name">Home</div>

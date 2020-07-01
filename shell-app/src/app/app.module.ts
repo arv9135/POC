@@ -16,11 +16,13 @@ import { MenuListItemComponent } from './Shared/menu-list-item/menu-list-item.co
 import { TabsComponent } from './tabs/tabs.component';
 
 import { SidebarComponent } from './Shared/sidebar/sidebar.component';
+import { ContentComponent } from './Shared/content/content.component';
 
 @NgModule({
   declarations: [
-    AppComponent, HeaderComponent, TopNavComponent, MenuListItemComponent, TabsComponent,
-   SidebarComponent
+    AppComponent, HeaderComponent, TopNavComponent,
+    MenuListItemComponent, SidebarComponent, TabsComponent,
+    ContentComponent
   ],
   imports: [
     BrowserModule,

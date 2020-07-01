@@ -1,0 +1,20 @@
+
+<mat-tab-group [selectedIndex]="selected.value"
+(selectedIndexChange)="selected.setValue($event)" animationDuration="0ms">
+<mat-tab *ngFor="let tab of tabs; let index = index">
+<ng-template mat-tab-label>    
+<div class="hdr">{{tab}}</div>
+<div class="subHdr">sub{{tab}}</div>
+<button class="btnTabClose" (click)="removeTab(index)">
+<mat-icon>close</mat-icon>
+</button>
+</ng-template>
+<div style="background-color: aquamarine;">  Contents for {{tab}} tab
+<iframe onload='javascript:(function(o){o.style.height=o.contentWindow.document.body.scrollHeight+"px";}(this));' style="height:200px;width:100%;border:none;overflow:hidden;">
+</iframe>
+
+<!-- iframe cmponent pass url as input etc-->
+</div>
+
+</mat-tab>
+</mat-tab-group>
