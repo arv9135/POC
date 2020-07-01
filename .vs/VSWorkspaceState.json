@@ -2,8 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\ChildApps",
-    "\\Services"
+    "\\shell-app",
+    "\\shell-app\\src",
+    "\\shell-app\\src\\app",
+    "\\shell-app\\src\\app\\Shared",
+    "\\shell-app\\src\\app\\Shared\\header",
+    "\\shell-app\\src\\app\\Shared\\menu-list-item",
+    "\\shell-app\\src\\app\\Shared\\Services",
+    "\\shell-app\\src\\app\\Shared\\sidebar"
   ],
-  "SelectedNode": "\\Services",
+  "SelectedNode": "\\shell-app\\src\\app\\Shared\\Services\\nav.service.ts",
   "PreviewInSolutionExplorer": false
 }

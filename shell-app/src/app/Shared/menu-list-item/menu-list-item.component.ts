@@ -26,7 +26,7 @@ export class MenuListItemComponent implements OnInit {
   @Input() depth: number;
 
   constructor(public navService: NavService,
-    private commService: ShellCommService,
+    //private commService: ShellCommService,
               public router: Router) {
     if (this.depth === undefined) {
       this.depth = 0;
@@ -46,8 +46,8 @@ export class MenuListItemComponent implements OnInit {
 
   onItemSelected(item: NavItem) {
     if (!item.children || !item.children.length) {
-      this.commService.go(item.route);
-      this.navService.closeNav();
+      //this.commService.go(item.route);
+      //this.navService.closeNav();
     }
     if (item.children && item.children.length) {
       this.expanded = !this.expanded;

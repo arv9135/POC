@@ -1,0 +1,27 @@
+.nav-item-class {
+    padding-left: 0.6rem;
+     position: relative;
+     padding-bottom: 1rem;
+      padding-top: 1rem;
+}
+
+.nav-item-class:hover {
+    cursor: pointer;
+}
+
+.side-nav {
+  width: 6rem !important;
+}
+.nav-item-selected {
+    cursor: pointer;
+    background: #d2cece;
+    border-left: 3px solid blue;
+}
+
+.mat-icon {
+  font-size: x-large;
+}
+
+.name {
+  font-weight: 600;
+}

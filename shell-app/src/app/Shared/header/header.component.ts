@@ -11,29 +11,36 @@ import { NavService } from '../Services/nav.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements AfterViewInit {
-  @ViewChild('appDrawer') appDrawer: ElementRef;
+  @ViewChild('appDrawer') appDrawer: MatSidenav;
   navItems: NavItem[] = [
     {
       displayName: 'Service A',
-      iconName: '',
+      iconName: 'check_circle',
       route: 'a',
       children: [
         {
           displayName: 'Comp A',
-          iconName: '',
+          iconName: 'check_circle',
           route: 'a',
-          children: []
+          children: [
+            {
+              displayName: 'Comp A A',
+              iconName: 'check_circle',
+              route: 'a',
+              children: []
+            }
+          ]
         },
       ]
     },
     {
       displayName: 'Service B',
-      iconName: '',
+      iconName: 'check_circle',
       route: 'b',
       children: [
         {
           displayName: 'Comp A',
-          iconName: '',
+          iconName: 'check_circle',
           route: 'b',
           children: [
           ]
@@ -42,14 +49,14 @@ export class HeaderComponent implements AfterViewInit {
     }
   ];
 
-  constructor(private navService: NavService, private commService: ShellCommService) {
+  constructor(private navService: NavService, /*private commService: ShellCommService*/) {
   }
 
   ngAfterViewInit() {
     this.navService.appDrawer = this.appDrawer;
 
-    this.commService.init();
-    this.commService.preload();
+    //this.commService.init();
+    //this.commService.preload();
   }
   closeSideNav() {
     this.navService.closeNav();
