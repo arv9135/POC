@@ -1,3 +1,4 @@
+@import '../../theme';
 .nav-item-class {
   padding-left: 0.6rem;
   position: relative;
@@ -31,11 +32,11 @@
 }
 
 .default-background {
-  background: #ebebeb;
+  background: mat-color($app-primary, 100);
 }
 
 .margin-top-5 {
-  margin-top: 5vh;
+  margin-top: 36px;
 }
 
 .mat-icon {

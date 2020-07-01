@@ -28,7 +28,7 @@ $app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
 @import '~@angular/material/theming';
 @include mat-core();
 
-$app-primary: mat-palette($mat-grey, 900);
+$app-primary: mat-palette($mat-grey, 300);
 $app-accent: mat-palette($mat-blue-grey, 100, 500, 900);
 $app-warn: mat-palette($mat-lime);
 

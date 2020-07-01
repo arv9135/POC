@@ -24,13 +24,9 @@
 
   </mat-tab>
 </mat-tab-group>
-<mat-grid-list>
-  <mat-grid-tile *ngFor="let tab of tabs; let index = index"
+  <div *ngFor="let tab of tabs; let index = index"
                  [style.display]='tab.active? "inline" : "none"'
                  [style.position]='tab.active? "static" : "absolute"'>
-
     <div id={{tab.label}}> </div>
-
-  </mat-grid-tile>
-</mat-grid-list>
+  </div>
 
