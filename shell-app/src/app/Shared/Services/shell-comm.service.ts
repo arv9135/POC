@@ -1,7 +1,8 @@
-import { Injectable, Optional } from '@angular/core';
+import { Injectable, Optional, SecurityContext } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { IAppConfig } from '../Models/AppConfig';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +14,11 @@ export class ShellCommService {
   passedTo: any;
   activatedRoute: null;
   config: IAppConfig[];
+
+  constructor(
+    private sanitizer: DomSanitizer
+  ) {
+  }
   configure(config: any) { this.config = config };
   init() {
     window.addEventListener('hashchange', this.routeByUrl.bind(this), false);
@@ -55,7 +61,7 @@ export class ShellCommService {
     if (!route) throw Error('route not found: ' + route);
 
     this.ensureIframeCreated(outletId, route, subRoute);
-    this.activateRoute(route, subRoute);
+    //this.activateRoute(route, subRoute);
   }
   ensureIframeCreated(outletId:string, route?: any, subRoute?: any) {
     if (!this.getIframe(route)) {
@@ -71,8 +77,14 @@ export class ShellCommService {
 
       var iframe = document.createElement('iframe');
       iframe.style['display'] = 'none';
-      iframe.src = url;
+      var abc = this.sanitizer.bypassSecurityTrustResourceUrl(url);
+      //var abc = this.sanitizer.sanitize(SecurityContext.RESOURCE_URL, this.sanitizer.bypassSecurityTrustResourceUrl(url));
+    
+      //iframe.setAttribute("src", abc);
+      iframe.src = `${url} | safe`; 
       iframe.id = route.path;
+      iframe.style['display'] = 'block';
+      iframe.allowFullscreen = true;
       iframe.className = 'outlet-frame';
 
       let outlet = this.getOutlet(outletId);
@@ -86,7 +98,7 @@ export class ShellCommService {
     this.config.forEach(function (route) {
       var iframe = that.getIframe(route);
       if (iframe) {
-        iframe.style['display'] = route === routeToActivate ? 'block' : 'none';
+        //iframe.style['display'] = route === routeToActivate ? 'block' : 'none';
       }
     });
 

@@ -35,9 +35,10 @@ import { MatTabsModule } from "@angular/material/tabs";
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatNativeDateModule, MAT_DATE_FORMATS, DateAdapter } from '@angular/material/core';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { SafePipe } from './safe.pipe';
 
 @NgModule({
-  declarations: [],
+  declarations: [SafePipe],
   entryComponents: [
   ],
   imports: [
