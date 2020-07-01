@@ -26,3 +26,9 @@
     margin-right: 10px;
   }
 }
+
+.nav-item-selected {
+  cursor: pointer;
+  background-color: mat-color($app-primary, 500) !important;
+  border-left: 3px solid blue;
+}

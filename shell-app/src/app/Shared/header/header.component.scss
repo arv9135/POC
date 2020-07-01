@@ -2,7 +2,8 @@
 @import '../../theme.scss';
 
 .mat-sidenav {
-  width: 360px;
+  width: 250px;
+  background-color: #E0E0E0 !important;
 }
 
 .mat-sidenav-container {
@@ -61,8 +62,17 @@
 
 .container-example {
   padding-left: 6rem !important;
+  
 }
 
 .content-body {
   padding: 5px 0;
 }
+
+.heading-style {
+    font-size:x-large;
+    display:block;
+    text-align:center;
+    font-weight:bold;
+}
+

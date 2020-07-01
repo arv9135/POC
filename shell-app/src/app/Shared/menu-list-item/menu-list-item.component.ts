@@ -21,6 +21,7 @@ import { ShellCommService } from '../Services/shell-comm.service';
 })
 export class MenuListItemComponent implements OnInit {
   expanded: boolean;
+  
   @HostBinding('attr.aria-expanded') ariaExpanded = this.expanded;
   @Input() item: NavItem;
   @Input() depth: number;
@@ -45,6 +46,7 @@ export class MenuListItemComponent implements OnInit {
   }
 
   onItemSelected(item: NavItem) {
+    this.navService.selectedChild = item.displayName;
     if (!item.children || !item.children.length) {
       //this.commService.go(item.route);
       //this.navService.closeNav();

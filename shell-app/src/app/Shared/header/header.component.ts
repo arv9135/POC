@@ -49,7 +49,7 @@ export class HeaderComponent implements AfterViewInit {
     }
   ];
 
-  constructor(private navService: NavService, /*private commService: ShellCommService*/) {
+  constructor(public navService: NavService, /*private commService: ShellCommService*/) {
   }
 
   ngAfterViewInit() {
