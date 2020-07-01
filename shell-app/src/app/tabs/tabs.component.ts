@@ -20,6 +20,8 @@ export class TabsComponent implements OnInit {
   selected = new FormControl(0);
 
   addTab(selectAfterAdding: boolean) {
+    //if the clicked title is not there then push
+    //name of tab instead of new
     this.tabs.push('New');
 
     if (selectAfterAdding) {
