@@ -5,6 +5,10 @@
       padding-top: 1rem;
 }
 
+.padding-top-zero {
+  padding-top: 0;
+}
+
 .nav-item-class:hover {
     cursor: pointer;
 }
@@ -14,8 +18,22 @@
 }
 .nav-item-selected {
     cursor: pointer;
-    background: #d2cece;
-    border-left: 3px solid blue;
+    background: #dbdbdb;
+    border-left: 3px solid #0c74da;
+}
+
+.mat-icon {
+  font-size: larger !important;
+  margin-top: 5px;
+  padding-left: 14px
+}
+
+.default-background {
+  background: #ebebeb;
+}
+
+.margin-top-5 {
+  margin-top: 5vh;
 }
 
 .mat-icon {
@@ -24,4 +42,33 @@
 
 .name {
   font-weight: 600;
+  padding-left: 2px;
+}
+
+.bottom-fix {
+  position: fixed;
+  bottom: 0;
+}
+
+.margin-top-5px {
+  margin-top: 5px;
+}
+
+.header-nav-title {
+  left: 42%;
+  font-weight: 600;
+  position: fixed;
+}
+
+.flex {
+  display: flex;
+}
+
+.img-15 {
+  height: 15px;
+}
+
+.header-nav {
+  height: 5vh;
+  background: #ebebeb
 }
