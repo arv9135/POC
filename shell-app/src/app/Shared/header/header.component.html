@@ -1,11 +1,10 @@
 <!--<app-top-nav class="fixed-topnav"></app-top-nav>-->
 <mat-sidenav-container class="container-example">
   <mat-sidenav #appDrawer mode="side" opened="false">
-    <!--<button class="close" mat-button (click)="closeSideNav()">X</button>-->
     <mat-nav-list>
       <app-menu-list-item *ngFor="let item of navItems" [item]="item"></app-menu-list-item>
     </mat-nav-list>
   </mat-sidenav>
-  <app-content></app-content>
+  <app-content id="outlet" #outlet></app-content>
   <div fxFlex></div>
 </mat-sidenav-container>
