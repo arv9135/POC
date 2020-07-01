@@ -29,7 +29,7 @@ export class AppComponent implements OnInit {
   }
 
 
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private eRef: ElementRef/*, public commService: ShellCommService*/) {
+  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private eRef: ElementRef, public commService: ShellCommService) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
@@ -47,7 +47,7 @@ export class AppComponent implements OnInit {
     this.mobileQuery.removeListener(this._mobileQueryListener);
   }
   ngOnInit(): void {
-    //this.commService.configure(this.config);
+    this.commService.configure(this.config);
   }
   title = 'shell-app';
   config = [
@@ -62,12 +62,12 @@ export class AppComponent implements OnInit {
   ];
 
   getMessage() {
-    //this.passedMessage = this.commService.passedMessage;
-    //this.passedTo = this.commService.passedTo;
+    this.passedMessage = this.commService.passedMessage;
+    this.passedTo = this.commService.passedTo;
   }
 
   sendMessage() {
-    //this.commService.sendMessage(this.messageToSend, this.passedToChild);
+    this.commService.sendMessage(this.messageToSend, this.passedToChild);
   }
 
 

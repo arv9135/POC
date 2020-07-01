@@ -7,6 +7,7 @@ import { IAppConfig } from '../Models/AppConfig';
   providedIn: 'root'
 })
 export class ShellCommService {
+  outletId: string;
   additionalConfig: { hashPrefix: '/' };
   passedMessage: any;
   passedTo: any;
@@ -16,13 +17,13 @@ export class ShellCommService {
   init() {
     window.addEventListener('hashchange', this.routeByUrl.bind(this), false);
     window.addEventListener('message', this.handleMessage.bind(this), false);
-    if (!location.hash && this.config && this.config.length > 0) {
-      var defaultRoute = this.config[0];
-      this.go(defaultRoute.path);
-    }
-    else {
-      this.routeByUrl();
-    }
+    //if (!location.hash && this.config && this.config.length > 0) {
+    //  var defaultRoute = this.config[0];
+    //  this.go(outletId, defaultRoute.path);
+    //}
+    //else {
+    //  this.routeByUrl(outletId);
+    //}
   }
   handleMessage(event) {
     if (!event.data) return;
@@ -49,16 +50,14 @@ export class ShellCommService {
     iframe.style.width = '100%';
     iframe.style.backgroundColor = '#C0C0C0'
   }
-  go(path?: any, subRoute?: any) {
-    var route = this.config.find(function (route) {
-      return route.path === path;
-    });
+  go(outletId:string, path?: any, subRoute?: any) {
+    var route = this.config.find(args => args.path == path);
     if (!route) throw Error('route not found: ' + route);
 
-    this.ensureIframeCreated(route, subRoute);
+    this.ensureIframeCreated(outletId, route, subRoute);
     this.activateRoute(route, subRoute);
   }
-  ensureIframeCreated(route?: any, subRoute?: any) {
+  ensureIframeCreated(outletId:string, route?: any, subRoute?: any) {
     if (!this.getIframe(route)) {
 
       var url = '';
@@ -76,7 +75,7 @@ export class ShellCommService {
       iframe.id = route.path;
       iframe.className = 'outlet-frame';
 
-      let outlet = this.getOutlet();
+      let outlet = this.getOutlet(outletId);
       if (!outlet) throw new Error('outlet not found');
 
       outlet.appendChild(iframe);
@@ -122,25 +121,25 @@ export class ShellCommService {
     return document.getElementById(route.path) as HTMLIFrameElement;
   }
 
-  getOutlet() {
-    return document.getElementById('outlet');
+  getOutlet(outletId) {
+    return document.getElementById(outletId);
   }
-  routeByUrl() {
+  routeByUrl(outletId:string) {
     if (!location.hash) return;
     var path = location.hash.substr(1);
     if (!path) return;
     var segments = path.split('/');
     var appPath = segments[0];
     var rest = segments.slice(1).join('/');
-    this.go(appPath, rest);
+    this.go(outletId, appPath, rest);
   }
 
-  preload() {
-    var that = this;
-    this.config.forEach(function (route) {
-      that.ensureIframeCreated(route);
-    })
-  }
+  //preload() {
+  //  var that = this;
+  //  this.config.forEach(function (route) {
+  //    that.ensureIframeCreated(route);
+  //  })
+  //}
 
   sendMessage(message: any, from: any) {
     var app = this.getConfig(from);
