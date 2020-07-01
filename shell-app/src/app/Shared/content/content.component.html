@@ -1,4 +1,4 @@
-<div *ngIf="tabs.length > 0">
+<div [hidden]="tabs.length == 0">
 <mat-tab-group [selectedIndex]="selected.value"
 (selectedIndexChange)="selected.setValue($event)" animationDuration="0ms">
 <mat-tab *ngFor="let tab of tabs; let index = index">

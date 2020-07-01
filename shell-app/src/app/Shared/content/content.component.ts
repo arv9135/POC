@@ -16,7 +16,8 @@ export class ContentComponent implements OnInit {
   constructor(private navService: NavService) { }
 
   ngOnInit(): void {
-    this.navService.selectedMenuItem.subscribe((data) => this.addTab(data))
+    this.navService.selectedMenuItem.subscribe((data) => this.addTab(data));
+    this.tabs=[];
   }
 
  
