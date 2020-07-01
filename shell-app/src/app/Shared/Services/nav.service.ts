@@ -7,6 +7,8 @@ import { MatSidenav } from '@angular/material/sidenav';
 export class NavService {
   public appDrawer: MatSidenav;
   expanded: boolean = false;
+  selectedChild: string = '';
+  featureSelected: string = '';
   
   public currentUrl = new BehaviorSubject<string>(undefined);
   public selectedMenuItem = new BehaviorSubject<string>(undefined);
