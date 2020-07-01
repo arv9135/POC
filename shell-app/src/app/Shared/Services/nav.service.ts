@@ -11,7 +11,7 @@ export class NavService {
   featureSelected: string = '';
   
   public currentUrl = new BehaviorSubject<string>(undefined);
-  public selectedMenuItem = new BehaviorSubject<string>(undefined);
+  public selectedMenuItem = new BehaviorSubject<any>(undefined);
 
   constructor(private router: Router) {
     this.router.events.subscribe((event: Event) => {
@@ -41,7 +41,7 @@ export class NavService {
     }
   }
 
-  public setCurrentTab(tabName){
-    this.selectedMenuItem.next(tabName);
+  public setCurrentTab(tabName, route) {
+    this.selectedMenuItem.next({ 'tabName': tabName, 'route': route });
   }
 }

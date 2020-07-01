@@ -54,6 +54,6 @@ export class MenuListItemComponent implements OnInit {
     if (item.children && item.children.length) {
       this.expanded = !this.expanded;
     }
-    this.navService.setCurrentTab(item.displayName);
+    this.navService.setCurrentTab(item.displayName, item.route);
   }
 }
