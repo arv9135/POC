@@ -1,39 +1,48 @@
+@import '../../theme';
+.btnTabClose {
+  background-color: transparent;
+  border: 0;
+}
 
-.btnTabClose{
-    background-color: transparent;
-    border: 0;
-   }
-   
-   .mat-icon {
-     font-size: 14px;
-     display: flex;
-     align-items: center;
-   }
-   .mat-tab-label {
-     border: 1px solid transparent;
-     display: inline-block;
-     width: 120px;
-     padding:0
-   }
-   
-   .mat-tab-label-active {
-    color: #495057;
-     background-color: #fff;
-     border-color: #dee2e6 #dee2e6 #fff;
-   }
-   
-   .mat-ink-bar {
-   display: none;
-   }
-   
-   .hdr, .subHdr{
-     display: block;
-     color: black;
-     width: 60px;
-     white-space: nowrap;
-     overflow: hidden;
-     text-overflow: ellipsis;
-   }
-   .mat-tab-header-pagination-chevron{
-       color:black;
-   }
+.mat-icon {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+
+.mat-tab-label {
+  border: 1px solid transparent;
+  background-color: mat-color($app-primary, 100);
+  border-radius: 10px;
+  display: inline-block;
+  width: 120px;
+  padding: 0
+}
+
+/*.mat-tab-label-active {
+  color: #495057;
+  background-color: #fff;
+  border-color: #dee2e6 #dee2e6 #fff;
+}*/
+
+.mat-tab-label-active {
+  background-color: mat-color($app-primary, 300);
+  
+}
+
+.mat-ink-bar {
+  display: none;
+}
+
+.hdr, .subHdr {
+  display: block;
+  color: black;
+  width: 60px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mat-tab-header-pagination-chevron {
+  color: black;
+}

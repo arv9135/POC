@@ -54,7 +54,8 @@ export class ShellCommService {
     iframe.style.height = height + 'px';
     //iframe.style.height = '100%';
     iframe.style.width = '100%';
-    iframe.style.backgroundColor = '#C0C0C0'
+    iframe.style.border = 'none';
+    //iframe.style.backgroundColor = '#C0C0C0'
   }
   go(outletId:string, path?: any, subRoute?: any) {
     var route = this.config.find(args => args.path == path);
@@ -86,6 +87,9 @@ export class ShellCommService {
       iframe.style['display'] = 'block';
       iframe.allowFullscreen = true;
       iframe.className = 'outlet-frame';
+      iframe.style.height = '100%';
+      iframe.style.width = '100%';
+      iframe.style.border = 'none';
 
       let outlet = this.getOutlet(outletId);
       if (!outlet) throw new Error('outlet not found');
