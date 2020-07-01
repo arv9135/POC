@@ -1,49 +1,57 @@
-<mat-sidenav mode="side" opened class="side-nav">
+<div class="header-nav">
+  <div class="margin-top-5px flex">
+    <img src="../../../assets/logo.png" class="img-15" />
+    <div class="header-nav-title">Common Engineering Workplace</div>
+  </div>
+</div>
+<mat-sidenav mode="side" opened class="side-nav" class="margin-top-5 default-background">
   <mat-nav-list>
 
     <div>
-      <div class="nav-item-class" (click)="selected = 'Home'; toggle();"
-           [ngClass]="{'nav-item-selected': selected == 'Home'}">
-        <mat-icon>home</mat-icon>
+      <div class="nav-item-class padding-top-zero" (click)="selected = 'home'; toggle(); "
+           [ngClass]="{'nav-item-selected': selected == 'home'}">
+        <mat-icon class="icon-wrapper">home</mat-icon>
         <div class="name">Home</div>
       </div>
 
-      <div class="nav-item-class" (click)="selected = 'Plant'; toggle();"
-           [ngClass]="{'nav-item-selected': selected == 'Plant'}">
-        <mat-icon>analytics</mat-icon>
+      <div class="nav-item-class" (click)="selected = 'plant'; toggle(); "
+           [ngClass]="{'nav-item-selected': selected == 'plant'}">
+        <mat-icon class="icon-wrapper">analytics</mat-icon>
         <div class="name">Plant</div>
       </div>
 
-      <div class="nav-item-class" (click)="selected='Library'; toggle();"
-           [ngClass]="{'nav-item-selected': selected == 'Library'}">
-        <mat-icon>settings</mat-icon>
+      <div class="nav-item-class" (click)="selected='library'; toggle(); "
+           [ngClass]="{'nav-item-selected': selected == 'library'}">
+        <mat-icon class="icon-wrapper">settings</mat-icon>
         <div class="name">Library</div>
       </div>
 
-      <div class="nav-item-class" (click)="selected='Work Place' ; toggle();"
-           [ngClass]="{'nav-item-selected': selected == 'Work Place'}">
-        <mat-icon>run_circle</mat-icon>
+      <div class="nav-item-class" (click)="selected='workPlace'; toggle(); "
+           [ngClass]="{'nav-item-selected': selected == 'workPlace'}">
+        <mat-icon class="icon-wrapper">run_circle</mat-icon>
         <div class="name">Work place</div>
       </div>
 
-      <div class="nav-item-class" (click)="selected ='Deploy'; toggle();"
-           [ngClass]="{'nav-item-selected': selected == 'Deploy'}">
-        <mat-icon>handyman</mat-icon>
+      <div class="nav-item-class" (click)="selected ='deploy'; toggle(); "
+           [ngClass]="{'nav-item-selected': selected == 'deploy'}">
+        <mat-icon class="icon-wrapper">handyman</mat-icon>
         <div class="name">Deploy</div>
       </div>
 
     </div>
-    <div class="nav-item-class" (click)="selected ='Resources' ; toggle();"
-         [ngClass]="{'nav-item-selected': selected == 'Resources'}">
-      <mat-icon>handyman</mat-icon>
-      <div class="name">Resources</div>
-    </div>
+    <div class="bottom-fix">
+      <div class="nav-item-class" (click)="selected ='resources'; toggle(); "
+           [ngClass]="{'nav-item-selected': selected == 'resources'}">
+        <mat-icon class="icon-wrapper">handyman</mat-icon>
+        <div class="name">Resources</div>
+      </div>
 
 
-    <div class="nav-item-class" (click)="selected ='Log Over'; toggle();"
-         [ngClass]="{'nav-item-selected': selected == 'Log Over'}">
-      <mat-icon>handyman</mat-icon>
-      <div class="name">Log Over</div>
+      <div class="nav-item-class" (click)="selected ='logOver'; toggle(); "
+           [ngClass]="{'nav-item-selected': selected == 'logOver'}">
+        <mat-icon class="icon-wrapper">handyman</mat-icon>
+        <div class="name">Log Over</div>
+      </div>
     </div>
   </mat-nav-list>
 </mat-sidenav>
