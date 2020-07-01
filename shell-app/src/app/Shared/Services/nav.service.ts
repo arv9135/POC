@@ -1,10 +1,13 @@
-import {EventEmitter, Injectable} from '@angular/core';
+import {EventEmitter, Injectable, ElementRef} from '@angular/core';
 import {Event, NavigationEnd, Router} from '@angular/router';
 import {BehaviorSubject} from 'rxjs';
+import { MatSidenav } from '@angular/material/sidenav';
 
 @Injectable()
 export class NavService {
-  public appDrawer: any;
+  public appDrawer: MatSidenav;
+  expanded: boolean = false;
+  
   public currentUrl = new BehaviorSubject<string>(undefined);
 
   constructor(private router: Router) {
@@ -16,10 +19,22 @@ export class NavService {
   }
 
   public closeNav() {
+    this.expanded = false;
     this.appDrawer.close();
   }
 
   public openNav() {
+    this.expanded = true;
     this.appDrawer.open();
+  }
+
+  async toggle() {
+    var result = await this.appDrawer.toggle();
+    if (result === 'open') {
+      this.expanded = true;
+    }
+    else {
+      this.expanded = false;
+    }
   }
 }
