@@ -9,6 +9,7 @@ export class NavService {
   expanded: boolean = false;
   
   public currentUrl = new BehaviorSubject<string>(undefined);
+  public selectedMenuItem = new BehaviorSubject<string>(undefined);
 
   constructor(private router: Router) {
     this.router.events.subscribe((event: Event) => {
@@ -36,5 +37,9 @@ export class NavService {
     else {
       this.expanded = false;
     }
+  }
+
+  public setCurrentTab(tabName){
+    this.selectedMenuItem.next(tabName);
   }
 }
