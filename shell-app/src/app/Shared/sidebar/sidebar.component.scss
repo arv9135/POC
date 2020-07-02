@@ -1,8 +1,9 @@
+@import '../../theme';
 .nav-item-class {
-    padding-left: 0.6rem;
-     position: relative;
-     padding-bottom: 1rem;
-      padding-top: 1rem;
+  padding-left: 0.6rem;
+  position: relative;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
 }
 
 .padding-top-zero {
@@ -10,16 +11,18 @@
 }
 
 .nav-item-class:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .side-nav {
   width: 6rem !important;
 }
+
 .nav-item-selected {
-    cursor: pointer;
-    background: #dbdbdb;
-    border-left: 3px solid #0c74da;
+  cursor: pointer;
+  background: #dbdbdb;
+  border-left: 3px solid #0c74da;
+  padding-left: 7px;
 }
 
 .mat-icon {
@@ -29,12 +32,11 @@
 }
 
 .default-background {
-  background: #ebebeb;
+  background: mat-color($app-primary, 100);
 }
 
 .margin-top-5 {
-  margin-top: 5px;
-  height: 100%;
+  margin-top: 36px;
 }
 
 .mat-icon {
