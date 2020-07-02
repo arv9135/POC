@@ -29,7 +29,7 @@ export class ContentComponent implements OnInit {
 
   addTab(res: any) {
     //styling
-    if (this.tabs && !!res && this.tabs.indexOf(res.tabName) < 0 && !!res.tabName) {
+    if (this.tabs && !!res && !!res.tabName && !this.tabs.find(args => args.label == res.tabName)) {
       var tab = new Tab(res.tabName);
       tab.active = true;
       this.tabs.push(tab);
