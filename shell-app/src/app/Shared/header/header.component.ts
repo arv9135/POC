@@ -14,12 +14,12 @@ export class HeaderComponent implements AfterViewInit {
   @ViewChild('appDrawer') appDrawer: MatSidenav;
   navItems: NavItem[] = [
     {
-      displayName: 'ServiceA',
+      displayName: 'Application A',
       iconName: 'check_circle',
       route: 'a',
       children: [
         {
-          displayName: 'CompA',
+          displayName: 'Comp A',
           iconName: 'check_circle',
           route: 'a',
           children: [
@@ -34,17 +34,10 @@ export class HeaderComponent implements AfterViewInit {
       ]
     },
     {
-      displayName: 'ServiceB',
+      displayName: 'Application B',
       iconName: 'check_circle',
       route: 'b',
       children: [
-        {
-          displayName: 'CompA',
-          iconName: 'check_circle',
-          route: 'b',
-          children: [
-          ]
-        }
       ]
     }
   ];
