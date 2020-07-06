@@ -42,7 +42,7 @@ export class ContentComponent implements OnInit {
       //this.commService.preload(tabName);
     }
     else if (!!res) {
-      this.selected.setValue(this.tabs.indexOf(res.tabName));
+      this.selected.setValue(this.tabs.indexOf(this.tabs.find(args => args.label == res.tabName)));
     }
       
   }
