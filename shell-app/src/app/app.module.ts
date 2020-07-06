@@ -17,12 +17,14 @@ import { TabsComponent } from './tabs/tabs.component';
 
 import { SidebarComponent } from './Shared/sidebar/sidebar.component';
 import { ContentComponent } from './Shared/content/content.component';
+import { ChatService } from './Shared/Services/chat.service';
+import { ChatComponent } from './Shared/chat/chat.component';
 
 @NgModule({
   declarations: [
     AppComponent, HeaderComponent, TopNavComponent,
     MenuListItemComponent, SidebarComponent, TabsComponent,
-    ContentComponent
+    ContentComponent, ChatComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +36,7 @@ import { ContentComponent } from './Shared/content/content.component';
     BrowserAnimationsModule,
     SharedModule.forRoot()
   ],
-  providers: [ShellCommService, NavService],
+  providers: [ShellCommService, NavService, ChatService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
