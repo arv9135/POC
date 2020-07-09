@@ -29,6 +29,11 @@ export class CommunicationService {
     parent.postMessage({ message: 'message-passed', appPath: this.childConfig.appId, content: message, to: appId }, '*');
   }
 
+  notifyChanges(isUnsaved: boolean) {
+    parent.postMessage({ message: 'unsavedChanges', appId: this.childConfig.appId, isUnsaved: isUnsaved }, '*');
+
+  }
+
   config (config) {
     this.childConfig = config;
   }

@@ -15,9 +15,17 @@ export class CompAComponent implements OnInit {
   messagePassed: string = '';
   passedTo: string = '';
 
-
+  detectChange() {
+    if (this.messagePassed.length > 0 || this.passedTo.length > 0) {
+      this.commService.notifyChanges(true)
+    }
+    else {
+      this.commService.notifyChanges(false);
+    }
+  }
   sendMessage() {
     this.commService.sendMessage(this.messagePassed, this.passedTo);
+    this.commService.notifyChanges(false);
   }
 
 }

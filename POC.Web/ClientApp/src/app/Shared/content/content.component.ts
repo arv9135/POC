@@ -13,12 +13,14 @@ import { Tab } from '../Models/tab';
 })
 export class ContentComponent implements OnInit {
   title = 'metaR';
-  tabs:Tab[] = [];
-  constructor(private navService: NavService, private commService: ShellCommService) { }
+  tabs: Tab[] = [];
+  isUnsaved: boolean = true;
+  constructor(private navService: NavService, public commService: ShellCommService) { }
 
   ngOnInit(): void {
     this.navService.selectedMenuItem.subscribe((data) => this.addTab(data));
-    this.tabs=[];
+    this.tabs = [];
+    
   }
 
   ngAfterViewInit() {

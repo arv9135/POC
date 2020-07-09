@@ -14,6 +14,7 @@ export class ShellCommService {
   passedTo: any;
   activatedRoute: null;
   config: IAppConfig[];
+  isUnsaved: { [appId: string]: boolean } = {};
 
   constructor(
     private sanitizer: DomSanitizer
@@ -45,6 +46,10 @@ export class ShellCommService {
       this.passedMessage = event.data.content;
       this.passedTo = event.data.to;
       this.sendMessage(event.data.content, event.data.to);
+    }
+    else if (event.data.message == 'unsavedChanges') {
+      //to do
+      this.isUnsaved[event.data.appId] = event.data.isUnsaved;
     }
   }
   resizeIframe(appPath, height) {
