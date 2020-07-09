@@ -72,7 +72,9 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ChildApp1", "ChildApps\Chil
 		SlnRelativePath = "ChildApps\ChildApp1\"
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POC.Api", "POC.Api\POC.Api.csproj", "{7A96EE89-D369-41D8-B680-F68B2E51DBC1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "POC.Api", "POC.Api\POC.Api.csproj", "{7A96EE89-D369-41D8-B680-F68B2E51DBC1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POC.Web", "POC.Web\POC.Web.csproj", "{ABE6204E-0E4A-48B4-B7F6-9369007450CD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -96,6 +98,10 @@ Global
 		{7A96EE89-D369-41D8-B680-F68B2E51DBC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A96EE89-D369-41D8-B680-F68B2E51DBC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7A96EE89-D369-41D8-B680-F68B2E51DBC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABE6204E-0E4A-48B4-B7F6-9369007450CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABE6204E-0E4A-48B4-B7F6-9369007450CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABE6204E-0E4A-48B4-B7F6-9369007450CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABE6204E-0E4A-48B4-B7F6-9369007450CD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,9 @@
+@import '../../theme';
+.text-align{
+    margin:auto;
+}
+
+.mat-elevation-z1 {
+  height: 36px;
+  background: mat-color($app-primary, 100) !important;
+}
