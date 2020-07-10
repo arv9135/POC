@@ -8,7 +8,7 @@ import { ShellCommService } from './Shared/Services/shell-comm.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   
   mobileQuery: MediaQueryList;
   isExpended: boolean = false;
@@ -20,13 +20,6 @@ export class AppComponent implements OnInit {
   @ViewChild('snav') sidenav: MatSidenav;
   @ViewChild('outlet') outlet: ElementRef;
   private _mobileQueryListener: () => void;
-  @HostListener('document:click', ['$event'])
-  clickout(event) {
-    if (this.eRef.nativeElement.contains(event.target)) {
-    } else {
-      this.sidenav.close();
-    }
-  }
 
 
   constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private eRef: ElementRef, public commService: ShellCommService) {
@@ -46,20 +39,8 @@ export class AppComponent implements OnInit {
   ngOnDestroy(): void {
     this.mobileQuery.removeListener(this._mobileQueryListener);
   }
-  ngOnInit(): void {
-    this.commService.configure(this.config);
-  }
+
   title = 'shell-app';
-  config = [
-    {
-      path: 'a',
-      app: 'http://localhost:4300/'
-    },
-    {
-      path: 'b',
-      app: 'http://localhost:4400/'
-    }
-  ];
 
   getMessage() {
     this.passedMessage = this.commService.passedMessage;

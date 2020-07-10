@@ -1,43 +1,34 @@
-import { Injectable, Optional, SecurityContext } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Injectable, Optional, SecurityContext, HostListener, RendererFactory2, Renderer2, ElementRef, Inject } from '@angular/core';
 import { IAppConfig } from '../Models/AppConfig';
+import { Applications } from '../Models/applications';
 import { DomSanitizer } from '@angular/platform-browser';
+import { DOCUMENT } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ShellCommService {
-  outletId: string;
   additionalConfig: { hashPrefix: '/' };
   passedMessage: any;
   passedTo: any;
   activatedRoute: null;
-  config: IAppConfig[];
+  config: IAppConfig[] = Applications;
   isUnsaved: { [appId: string]: boolean } = {};
-
+  renderer: Renderer2;
   constructor(
-    private sanitizer: DomSanitizer
+    private sanitizer: DomSanitizer, @Inject(DOCUMENT) private dom, private rendererFactory2: RendererFactory2
   ) {
+    this.renderer = this.rendererFactory2.createRenderer(null, null);
+    this.renderer.listen('window', 'message', (evt) => {
+      this.handleMessage(evt);
+    });
   }
-  configure(config: any) { this.config = config };
-  init() {
-    window.addEventListener('hashchange', this.routeByUrl.bind(this), false);
-    window.addEventListener('message', this.handleMessage.bind(this), false);
-    //if (!location.hash && this.config && this.config.length > 0) {
-    //  var defaultRoute = this.config[0];
-    //  this.go(outletId, defaultRoute.path);
-    //}
-    //else {
-    //  this.routeByUrl(outletId);
-    //}
-  }
-  handleMessage(event) {
-    if (!event.data) return;
 
-    if (event.data.message == 'routed') {
-      this.setRouteInHash(event.data.appPath, event.data.route);
-    }
+  handleMessage(event) {
+    if (!event.data) {
+      return;
+    } 
+
     else if (event.data.message == 'set-height') {
       this.resizeIframe(event.data.appPath, event.data.height);
     }
@@ -53,14 +44,12 @@ export class ShellCommService {
     }
   }
   resizeIframe(appPath, height) {
-    let iframe = document.getElementById(appPath);
+    let iframe = this.dom.getElementById(appPath);
     if (!iframe) return;
     height = height + 30;
     iframe.style.height = height + 'px';
-    //iframe.style.height = '100%';
     iframe.style.width = '100%';
     iframe.style.border = 'none';
-    //iframe.style.backgroundColor = '#C0C0C0'
   }
   go(outletId:string, path?: any, subRoute?: any) {
     var route = this.config.find(args => args.path == path);
@@ -81,12 +70,11 @@ export class ShellCommService {
         url = route.app;
       }
 
-      var iframe = document.createElement('iframe');
+      var iframe = this.dom.createElement('iframe');
       iframe.style['display'] = 'none';
       var abc = this.sanitizer.bypassSecurityTrustResourceUrl(url);
       //var abc = this.sanitizer.sanitize(SecurityContext.RESOURCE_URL, this.sanitizer.bypassSecurityTrustResourceUrl(url));
-    
-      //iframe.setAttribute("src", abc);
+ 
       iframe.src = `${url} | safe`; 
       iframe.id = route.path;
       iframe.style['display'] = 'block';
@@ -116,34 +104,34 @@ export class ShellCommService {
       activatedIframe.contentWindow.postMessage({ message: 'sub-route', route: subRoute }, '*');
     }
 
-    this.setRouteInHash(routeToActivate.path, subRoute);
+    //this.setRouteInHash(routeToActivate.path, subRoute);
     this.activatedRoute = routeToActivate;
   }
 
-  setRouteInHash(path, subRoute) {
+  //setRouteInHash(path, subRoute) {
 
-    if (subRoute && subRoute.startsWith('/')) {
-      subRoute = subRoute.substr(1);
-    }
+  //  if (subRoute && subRoute.startsWith('/')) {
+  //    subRoute = subRoute.substr(1);
+  //  }
 
-    var hash = '';
+  //  var hash = '';
 
-    if (subRoute) {
-      hash = path + '/' + subRoute;
-    }
-    else {
-      hash = path;
-    }
-    history.replaceState(null, null, document.location.pathname + '#' + hash);
-  }
+  //  if (subRoute) {
+  //    hash = path + '/' + subRoute;
+  //  }
+  //  else {
+  //    hash = path;
+  //  }
+  //  history.replaceState(null, null, document.location.pathname + '#' + hash);
+  //}
 
 
   getIframe(route) {
-    return document.getElementById(route.path) as HTMLIFrameElement;
+    return this.dom.getElementById(route.path) as HTMLIFrameElement;
   }
 
   getOutlet(outletId) {
-    return document.getElementById(outletId);
+    return this.dom.getElementById(outletId);
   }
   routeByUrl(outletId:string) {
     if (!location.hash) return;
@@ -154,13 +142,6 @@ export class ShellCommService {
     var rest = segments.slice(1).join('/');
     this.go(outletId, appPath, rest);
   }
-
-  //preload() {
-  //  var that = this;
-  //  this.config.forEach(function (route) {
-  //    that.ensureIframeCreated(route);
-  //  })
-  //}
 
   sendMessage(message: any, from: any) {
     var app = this.getConfig(from);

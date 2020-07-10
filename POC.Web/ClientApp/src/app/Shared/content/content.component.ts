@@ -30,11 +30,6 @@ export class ContentComponent implements OnInit {
     this.navService.selectedMenuItem.subscribe((data) => this.addTab(data));
     this.tabs = [];
   }
-
-  ngAfterViewInit() {
-    this.commService.init();
-
-  }
   selected = new FormControl(0);
 
   addTab(res: any) {
