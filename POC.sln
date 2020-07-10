@@ -49,7 +49,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ChildApp1", "ChildApps\Chil
 		SlnRelativePath = "ChildApps\ChildApp1\"
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "POC.Web", "POC.Web\POC.Web.csproj", "{ABE6204E-0E4A-48B4-B7F6-9369007450CD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POC.Web", "POC.Web\POC.Web.csproj", "{A06CE81D-C323-44B3-80DA-4A5ED60B3217}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -65,10 +65,10 @@ Global
 		{A13B8D34-3964-4385-BAAE-328D6AC39E45}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A13B8D34-3964-4385-BAAE-328D6AC39E45}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{A13B8D34-3964-4385-BAAE-328D6AC39E45}.Release|Any CPU.Build.0 = Debug|Any CPU
-		{ABE6204E-0E4A-48B4-B7F6-9369007450CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{ABE6204E-0E4A-48B4-B7F6-9369007450CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{ABE6204E-0E4A-48B4-B7F6-9369007450CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{ABE6204E-0E4A-48B4-B7F6-9369007450CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A06CE81D-C323-44B3-80DA-4A5ED60B3217}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A06CE81D-C323-44B3-80DA-4A5ED60B3217}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A06CE81D-C323-44B3-80DA-4A5ED60B3217}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A06CE81D-C323-44B3-80DA-4A5ED60B3217}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
