@@ -1,4 +1,4 @@
-@import '../../theme';
+@import '../../../theme';
 .nav-item-class {
   padding-left: 0.6rem;
   position: relative;
@@ -32,7 +32,7 @@
 }
 
 .default-background {
-  background: mat-color($app-primary, 100);
+  background: mat-color($app-primary, z00);
 }
 
 .margin-top-5 {

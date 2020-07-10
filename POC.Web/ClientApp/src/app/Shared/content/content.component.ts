@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation, AfterViewChecked } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, AfterViewChecked, ChangeDetectorRef } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 import { NavService } from '../Services/nav.service';
@@ -17,23 +17,23 @@ export class ContentComponent implements OnInit {
   go: boolean;
   resssss: any;
   isUnsaved: boolean = true;
-  constructor(private navService: NavService, public commService: ShellCommService) { }
+  constructor(private navService: NavService, public commService: ShellCommService, private cdRef: ChangeDetectorRef) { }
   ngAfterViewChecked(): void {
     if (this.go) {
       this.commService.go(this.resssss.tabName, this.resssss.route);
       this.go = false;
     }
-      
+    this.cdRef.detectChanges();
   }
 
   ngOnInit(): void {
     this.navService.selectedMenuItem.subscribe((data) => this.addTab(data));
-    this.tabs=[];
+    this.tabs = [];
   }
 
   ngAfterViewInit() {
     this.commService.init();
-    
+
   }
   selected = new FormControl(0);
 
@@ -41,28 +41,20 @@ export class ContentComponent implements OnInit {
     //styling
     if (this.tabs && !!res && this.tabs.indexOf(res.tabName) < 0 && !!res.tabName && !this.tabs.find(args => args.label == res.tabName)) {
 
-        var tab = new Tab(res.tabName);
-        tab.active = true;
-        this.tabs.push(tab);
-        this.selected.setValue(this.tabs.length - 1);
-
-      //setTimeout(args => {
-      //  this.commService.go(res.tabName, res.route);
-      //}, 1000);
+      var tab = new Tab(res.tabName);
+      tab.active = true;
+      this.tabs.push(tab);
+      this.selected.setValue(this.tabs.length - 1);
       this.resssss = res;
       this.go = true;
-
-      //window.addEventListener("DOMContentLoaded", function () {
-      //  // do stuff
-      //  this.commService.go(res.tabName, res.route);
-      //}, false);
-      //this.commService.go('b');
-      //this.commService.preload(tabName);
     }
     else if (!!res) {
-      this.selected.setValue(this.tabs.indexOf(this.tabs.find(args => args.label == res.tabName)));
+      let index = this.tabs.indexOf(this.tabs.find(args => args.label == res.tabName));
+      this.selected.setValue(index);
+
+      this.tabChanged({ index: index })
     }
-      
+
   }
 
   removeTab(index: number) {
@@ -78,7 +70,7 @@ export class ContentComponent implements OnInit {
       }
       this.tabs[$event.index].active = true;
     }
-    
+
   }
 
 }
