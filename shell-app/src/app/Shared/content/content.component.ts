@@ -35,9 +35,15 @@ export class ContentComponent implements OnInit {
       this.tabs.push(tab);
       this.selected.setValue(this.tabs.length - 1);
 
-      setTimeout(args => {
+      //setTimeout(args => {
+      //  this.commService.go(res.tabName, res.route);
+      //}, 1000);
+
+
+      window.addEventListener("DOMContentLoaded", function () {
+        // do stuff
         this.commService.go(res.tabName, res.route);
-      }, 1000)
+      }, false);
       //this.commService.go('b');
       //this.commService.preload(tabName);
     }
