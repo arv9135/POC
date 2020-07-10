@@ -30,7 +30,7 @@ export class CommunicationService {
   }
 
   notifyChanges(isUnsaved: boolean) {
-    parent.postMessage({ message: 'unsavedChanges', appId: this.childConfig.appId, isUnsaved: isUnsaved }, '*');
+    parent.postMessage({ message: 'unsavedChanges', appId: 'ServiceA', isUnsaved: isUnsaved }, '*');
 
   }
 

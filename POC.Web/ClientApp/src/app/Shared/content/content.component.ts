@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation, AfterViewChecked } from '@angular/core';
-import {FormControl} from '@angular/forms';
+import { FormControl } from '@angular/forms';
 
 import { NavService } from '../Services/nav.service';
 import { ShellCommService } from '../Services/shell-comm.service';
@@ -11,7 +11,7 @@ import { Tab } from '../Models/tab';
   styleUrls: ['./content.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class ContentComponent implements OnInit, AfterViewChecked {
+export class ContentComponent implements OnInit {
   title = 'metaR';
   tabs: Tab[] = [];
   go: boolean;
@@ -19,15 +19,16 @@ export class ContentComponent implements OnInit, AfterViewChecked {
   isUnsaved: boolean = true;
   constructor(private navService: NavService, public commService: ShellCommService) { }
   ngAfterViewChecked(): void {
-    if(this.go)
+    if (this.go) {
       this.commService.go(this.resssss.tabName, this.resssss.route);
-    this.go = false;
+      this.go = false;
     }
+      
+  }
 
   ngOnInit(): void {
     this.navService.selectedMenuItem.subscribe((data) => this.addTab(data));
-    this.tabs = [];
-    
+    this.tabs=[];
   }
 
   ngAfterViewInit() {
@@ -38,11 +39,12 @@ export class ContentComponent implements OnInit, AfterViewChecked {
 
   addTab(res: any) {
     //styling
-    if (this.tabs && !!res && this.tabs.indexOf(res.tabName) < 0 && !!res.tabName) {
-      var tab = new Tab(res.tabName);
-      tab.active = true;
-      this.tabs.push(tab);
-      this.selected.setValue(this.tabs.length - 1);
+    if (this.tabs && !!res && this.tabs.indexOf(res.tabName) < 0 && !!res.tabName && !this.tabs.find(args => args.label == res.tabName)) {
+
+        var tab = new Tab(res.tabName);
+        tab.active = true;
+        this.tabs.push(tab);
+        this.selected.setValue(this.tabs.length - 1);
 
       //setTimeout(args => {
       //  this.commService.go(res.tabName, res.route);
@@ -58,7 +60,7 @@ export class ContentComponent implements OnInit, AfterViewChecked {
       //this.commService.preload(tabName);
     }
     else if (!!res) {
-      this.selected.setValue(this.tabs.indexOf(res.tabName));
+      this.selected.setValue(this.tabs.indexOf(this.tabs.find(args => args.label == res.tabName)));
     }
       
   }
