@@ -1,0 +1,24 @@
+@import '../node_modules/@angular/material/theming';
+
+// Include the base styles for Angular Material core. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component that you are using.
+
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker hue.
+$app-primary: mat-palette($mat-grey, 700, 500, 900);
+$app-accent: mat-palette($mat-blue-grey, 700, 300, 800);
+$app-warn: mat-palette($mat-lime);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$my-custom-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
+$my-dark-theme: mat-dark-theme($app-warn, $app-accent, $app-primary);
+
+@include angular-material-theme($my-custom-theme);
+
+$selected: #dbdbdb;
