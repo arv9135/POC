@@ -3,27 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "shell-app", "shell-app\", "{D0C84FE6-7AD6-408C-965E-5779440CC849}"
-	ProjectSection(WebsiteProperties) = preProject
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
-		Debug.AspNetCompiler.VirtualPath = "/localhost_9208"
-		Debug.AspNetCompiler.PhysicalPath = "shell-app\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_9208\"
-		Debug.AspNetCompiler.Updateable = "true"
-		Debug.AspNetCompiler.ForceOverwrite = "true"
-		Debug.AspNetCompiler.FixedNames = "false"
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/localhost_9208"
-		Release.AspNetCompiler.PhysicalPath = "shell-app\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_9208\"
-		Release.AspNetCompiler.Updateable = "true"
-		Release.AspNetCompiler.ForceOverwrite = "true"
-		Release.AspNetCompiler.FixedNames = "false"
-		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "9208"
-		SlnRelativePath = "shell-app\"
-	EndProjectSection
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{D8B85DC8-1D6C-4686-9850-AAB1A5935A02}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Resources", "Resources", "{6E38F1A1-AE05-4B7E-A2BB-BECABE597E80}"
@@ -72,9 +51,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ChildApp1", "ChildApps\Chil
 		SlnRelativePath = "ChildApps\ChildApp1\"
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "POC.Api", "POC.Api\POC.Api.csproj", "{7A96EE89-D369-41D8-B680-F68B2E51DBC1}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POC.Web", "POC.Web\POC.Web.csproj", "{ABE6204E-0E4A-48B4-B7F6-9369007450CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "POC.Web", "POC.Web\POC.Web.csproj", "{ABE6204E-0E4A-48B4-B7F6-9369007450CD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -82,10 +59,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D0C84FE6-7AD6-408C-965E-5779440CC849}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D0C84FE6-7AD6-408C-965E-5779440CC849}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D0C84FE6-7AD6-408C-965E-5779440CC849}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{D0C84FE6-7AD6-408C-965E-5779440CC849}.Release|Any CPU.Build.0 = Debug|Any CPU
 		{C0992837-3F86-45E3-A248-0942968EBB3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C0992837-3F86-45E3-A248-0942968EBB3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C0992837-3F86-45E3-A248-0942968EBB3E}.Release|Any CPU.ActiveCfg = Debug|Any CPU
@@ -94,10 +67,6 @@ Global
 		{A13B8D34-3964-4385-BAAE-328D6AC39E45}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A13B8D34-3964-4385-BAAE-328D6AC39E45}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{A13B8D34-3964-4385-BAAE-328D6AC39E45}.Release|Any CPU.Build.0 = Debug|Any CPU
-		{7A96EE89-D369-41D8-B680-F68B2E51DBC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7A96EE89-D369-41D8-B680-F68B2E51DBC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7A96EE89-D369-41D8-B680-F68B2E51DBC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7A96EE89-D369-41D8-B680-F68B2E51DBC1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{ABE6204E-0E4A-48B4-B7F6-9369007450CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{ABE6204E-0E4A-48B4-B7F6-9369007450CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ABE6204E-0E4A-48B4-B7F6-9369007450CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
