@@ -22,4 +22,8 @@
 <button type="button" (click)="broadcast()">Broadcast message</button>
 <br />
 <span>Broadcasted message: {{commService.broadcastedMessage}}</span>
+
+<button type="button" (click)="sharedWorkerPost()">SharedWorker Send</button>
+<br />
+<span>shared worker message: {{sharedWorkerMessage}}</span>
 <app-chat></app-chat>
