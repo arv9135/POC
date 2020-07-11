@@ -33,7 +33,8 @@
               "src/styles.scss",
               "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "webWorkerTsConfig": "tsconfig.worker.json"
           },
           "configurations": {
             "production": {
@@ -106,7 +107,8 @@
             "tsConfig": [
               "src/tsconfig.app.json",
               "src/tsconfig.spec.json",
-              "e2e/tsconfig.e2e.json"
+              "e2e/tsconfig.e2e.json",
+              "tsconfig.worker.json"
             ],
             "exclude": [
               "**/node_modules/**"
