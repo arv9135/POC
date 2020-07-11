@@ -38,11 +38,13 @@ export class ShellCommService {
     this.renderer = this.rendererFactory2.createRenderer(null, null);
     this.renderer.listen('window', 'message', (evt) => {
       this.handleMessage(evt);
-      this.channel.addEventListener('message', ev => {
-        this.broadcastedMessage = ev.data;
-        console.log(ev.data);
-      });
     });
+    //this.channel.addEventListener('message', ev => {
+      //  this.broadcastedMessage = ev.data;
+      //  console.log(ev.data);
+      //});
+
+    this.channel.onmessage = (ev) => this.broadcastedMessage = ev.data;
   }
 
   broadCast(message: string) {
