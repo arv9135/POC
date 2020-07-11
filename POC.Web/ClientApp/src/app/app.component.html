@@ -19,5 +19,7 @@
 <button type="button" (click)="sendMessage()">Submit</button>
 <br />
 <br />
-
+<button type="button" (click)="broadcast()">Broadcast message</button>
+<br />
+<span>Broadcasted message: {{commService.broadcastedMessage}}</span>
 <app-chat></app-chat>

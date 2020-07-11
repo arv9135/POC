@@ -15,15 +15,39 @@ export class ShellCommService {
   config: IAppConfig[] = Applications;
   isUnsaved: { [appId: string]: boolean } = {};
   renderer: Renderer2;
+
+
+  // Connect to the channel named "my_bus".
+  channel = new BroadcastChannel('my_bus');
+
+  //// Send a message on "my_bus".
+  //channel.postMessage('This is a test message.');
+
+  //// Listen for messages on "my_bus".
+  //channel.onmessage = function (e) {
+  //  console.log('Received', e.data);
+  //};
+
+  //// Close the channel when you're done.
+  //channel.close();
+
+  broadcastedMessage:any;
   constructor(
     private sanitizer: DomSanitizer, @Inject(DOCUMENT) private dom, private rendererFactory2: RendererFactory2
   ) {
     this.renderer = this.rendererFactory2.createRenderer(null, null);
     this.renderer.listen('window', 'message', (evt) => {
       this.handleMessage(evt);
+      this.channel.addEventListener('message', ev => {
+        this.broadcastedMessage = ev.data;
+        console.log(ev.data);
+      });
     });
   }
 
+  broadCast(message: string) {
+    this.channel.postMessage(message);
+  }
   handleMessage(event) {
     if (!event.data) {
       return;

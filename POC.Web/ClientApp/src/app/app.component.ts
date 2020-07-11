@@ -51,5 +51,8 @@ export class AppComponent {
     this.commService.sendMessage(this.messageToSend, this.passedToChild);
   }
 
+  broadcast() {
+    this.commService.broadCast(this.messageToSend);
+  }
 
 }
