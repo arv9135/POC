@@ -59,7 +59,7 @@ export class AppComponent {
 
 if (typeof Worker !== 'undefined') {
   // Create a new
-  const sharedWorker = new SharedWorker('./app.worker', { type: 'module' })
+  //const sharedWorker = new SharedWorker('./app.worker', { type: 'module' })
 
 
   const worker = new Worker('./app.worker', { type: 'module' });
