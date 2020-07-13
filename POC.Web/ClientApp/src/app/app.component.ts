@@ -79,7 +79,7 @@ export class AppComponent implements OnInit {
   dedicatedWorker: Worker;
   sharedWorker: SharedWorker.SharedWorker;
   sharedWorkerMessage: any;
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private eRef: ElementRef, public commService: ShellCommService) {
+  constructor(private changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private eRef: ElementRef, public commService: ShellCommService) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
@@ -103,9 +103,11 @@ export class AppComponent implements OnInit {
     this.sharedWorker = new SharedWorker('/assets/shared-worker.worker.js');
     this.sharedWorker.port.onmessage = ({ data }) => {
       this.sharedWorkerMessage = data;
+      this.changeDetectorRef.detectChanges();
         console.log(data);
       };
-      this.sharedWorker.port.start();
+    this.sharedWorker.port.start();
+    
     }
 
   toggle(path?: string, subRoute?: string) {
@@ -117,11 +119,11 @@ export class AppComponent implements OnInit {
   }
 
   dedicatedWorkerPost() {
-    this.dedicatedWorker.postMessage('hello');
+    this.dedicatedWorker.postMessage(this.messageToSend);
   }
 
   sharedWorkerPost() {
-    this.sharedWorker.port.postMessage('shared worker called.');
+    this.sharedWorker.port.postMessage(this.messageToSend);
   }
 
   ngOnDestroy(): void {

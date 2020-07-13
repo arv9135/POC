@@ -2,7 +2,7 @@
 <app-sidebar></app-sidebar>
 <app-header></app-header>
 <div>
-  <h3>Message received from children</h3>
+  <h4>Message received from children</h4>
   <div>
     <span>Passed message: {{commService.passedMessage}}</span>
   </div>
@@ -11,19 +11,37 @@
   </div>
 </div>
 
-<h3>Post message</h3>
-<input type="text" placeholder="Message" [(ngModel)]="messageToSend" />
-<br />
-<input type="text" placeholder="Send to" [(ngModel)]="passedToChild" />
-<br />
-<button type="button" (click)="sendMessage()">Submit</button>
 <br />
 <br />
-<button type="button" (click)="broadcast()">Broadcast message</button>
-<br />
-<span>Broadcasted message: {{commService.broadcastedMessage}}</span>
 
-<button type="button" (click)="sharedWorkerPost()">SharedWorker Send</button>
+<div>
+  <h4>Post message</h4>
+  <input type="text" placeholder="Message" [(ngModel)]="messageToSend" />
+  <br />
+  <input type="text" placeholder="Send to" [(ngModel)]="passedToChild" />
+  <br />
+</div>
 <br />
-<span>shared worker message: {{sharedWorkerMessage}}</span>
+<br />
+<div>
+  <button type="button" (click)="sendMessage()">Send Message to Iframe</button>
+  <br />
+</div>
+
+<br />
+<br />
+<div>
+  <button type="button" (click)="broadcast()">Broadcast message(In same browser)</button>
+  <br />
+  <span>Broadcasted message: {{commService.broadcastedMessage}}</span>
+  <br />
+</div>
+<br />
+<br />
+<div>
+  <button type="button" (click)="sharedWorkerPost()">SharedWorker Send(In same browser)</button>
+  <br />
+  <span>shared worker message: {{sharedWorkerMessage}}</span>
+</div>
+
 <app-chat></app-chat>
