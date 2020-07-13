@@ -1,7 +1,10 @@
 <!--<app-top-nav class="fixed-topnav"></app-top-nav>-->
 <mat-sidenav-container class="container-example">
   <mat-sidenav #appDrawer mode="side" opened="false">
+    <button style="position:absolute; right:0" mat-button (click)="closeSideNav()"><mat-icon style="
+  font-size: x-large">chevron_left</mat-icon></button>
     <span class="heading-style">{{navService.featureSelected}}</span>
+
     <mat-nav-list>
       <app-menu-list-item *ngFor="let item of navItems" [item]="item"></app-menu-list-item>
     </mat-nav-list>
